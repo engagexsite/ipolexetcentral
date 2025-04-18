@@ -22,6 +22,18 @@
       overflow-x: hidden;
     }
 
+    /* Animações Extras */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
     /* Header */
     header {
       background-color: #111;
@@ -35,6 +47,7 @@
       color: #ff0055;
       text-transform: uppercase;
       letter-spacing: 2px;
+      animation: fadeInUp 1s ease-out;
     }
 
     header h1 span {
@@ -66,6 +79,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: color 0.3s ease;
+      animation: fadeInUp 1.5s ease-out;
     }
 
     nav ul li a:hover {
@@ -77,6 +91,7 @@
       background: #111;
       padding: 40px 0;
       text-align: center;
+      animation: fadeInUp 2s ease-out;
     }
 
     .about h2 {
@@ -93,100 +108,22 @@
       margin: 0 auto;
     }
 
-    /* Seção de Projetos */
-    .projects {
-      background: #222;
-      padding: 40px 0;
-      text-align: center;
+    /* Botões de Envio */
+    .contact button {
+      padding: 15px 30px;
+      background-color: #ff0055;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
     }
 
-    .projects h2 {
-      font-size: 2rem;
-      color: #ff0055;
-      margin-bottom: 20px;
-    }
-
-    .project {
-      background: #333;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: scale(1.05);
-    }
-
-    .project h3 {
-      color: #00FF00;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .project p {
-      color: #ccc;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Seção de Testemunhos */
-    .testimonials {
-      background: #111;
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .testimonials h2 {
-      font-size: 2rem;
-      color: #ff0055;
-      margin-bottom: 20px;
-    }
-
-    .testimonial {
-      max-width: 600px;
-      margin: 20px auto;
-      font-style: italic;
-      color: #ccc;
-    }
-
-    /* FAQ */
-    .faq {
-      background: #222;
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .faq h2 {
-      font-size: 2rem;
-      color: #ff0055;
-      margin-bottom: 20px;
-    }
-
-    .faq p {
-      font-size: 1.1rem;
-      color: #ccc;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto;
+    .contact button:hover {
+      background-color: #ff3366;
     }
 
     /* Contato */
-    .contact {
-      background: #111;
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 2rem;
-      color: #ff0055;
-      margin-bottom: 20px;
-    }
-
     .contact form {
       max-width: 600px;
       margin: 0 auto;
@@ -201,49 +138,6 @@
       border: none;
       border-radius: 5px;
       color: #fff;
-    }
-
-    .contact button {
-      padding: 15px 30px;
-      background-color: #ff0055;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .contact button:hover {
-      background-color: #ff3366;
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #222;
-      padding: 20px;
-      text-align: center;
-      font-size: 1rem;
-      color: #aaa;
-    }
-
-    footer a {
-      color: #00FF00;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-      color: #ff0055;
-    }
-
-    /* Animações */
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Aplicando animação */
-    .fadeIn {
-      animation: fadeIn 1.5s ease-out;
     }
   </style>
 </head>
@@ -266,52 +160,18 @@
   </nav>
 
   <!-- Sobre -->
-  <div id="about" class="about fadeIn">
+  <div id="about" class="about">
     <h2>Sobre a IPolexet</h2>
     <p>A IPolexet é uma empresa inovadora que se dedica a criar soluções digitais eficientes para conectar as pessoas e melhorar suas experiências online.</p>
   </div>
 
-  <!-- Projetos -->
-  <div id="projects" class="projects fadeIn">
-    <h2>Projetos em Destaque</h2>
-
-    <!-- EngageX -->
-    <div class="project">
-      <h3><a href="https://engagexsite.github.io/engageX/" target="_blank">EngageX</a></h3>
-      <p>O EngageX é uma plataforma dedicada ao impulsionamento do engajamento nas redes sociais, com foco no TikTok.</p>
-    </div>
-
-    <!-- Sublivium -->
-    <div class="project">
-      <h3><a href="https://engagexsite.github.io/sublivium/" target="_blank">Sublivium</a></h3>
-      <p>Sublivium é um jogo de narrativa interativa com escolhas e consequências que traz à tona críticas sociais e questões de moralidade.</p>
-    </div>
-  </div>
-
-  <!-- Testemunhos -->
-  <div id="testimonials" class="testimonials fadeIn">
-    <h2>O que dizem nossos clientes</h2>
-    <div class="testimonial">
-      <p>"A IPolexet me proporcionou uma experiência incrível, revolucionando a forma como eu interajo com os produtos digitais!"</p>
-    </div>
-    <div class="testimonial">
-      <p>"Os projetos são simplesmente incríveis! Eu sou fã de tudo o que eles fazem. Muito obrigado por transformar a minha forma de ver a tecnologia!"</p>
-    </div>
-  </div>
-
-  <!-- FAQ -->
-  <div id="faq" class="faq fadeIn">
-    <h2>Perguntas Frequentes</h2>
-    <p>Quer saber mais sobre nossos serviços? Confira as perguntas mais comuns e descubra como podemos ajudá-lo!</p>
-  </div>
-
   <!-- Contato -->
-  <div id="contact" class="contact fadeIn">
+  <div id="contact" class="contact">
     <h2>Entre em Contato</h2>
-    <form>
-      <input type="text" placeholder="Seu nome" required>
-      <input type="email" placeholder="Seu e-mail" required>
-      <textarea placeholder="Sua mensagem" required></textarea>
+    <form id="contact-form" action="/submit" method="POST">
+      <input type="text" name="name" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="message" placeholder="Sua mensagem" required></textarea>
       <button type="submit">Enviar Mensagem</button>
     </form>
   </div>
@@ -321,6 +181,25 @@
     <p>© 2025 IPolexet | <a href="#terms">Termos e Condições</a> | <a href="https://www.instagram.com/ipolexet/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a></p>
   </footer>
 
+  <!-- Integração com Backend (Esqueleto) -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let formData = new FormData(this);
+      fetch('/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Mensagem enviada com sucesso!');
+        document.getElementById('contact-form').reset();
+      })
+      .catch(error => {
+        alert('Erro ao enviar a mensagem. Tente novamente.');
+      });
+    });
+  </script>
 </body>
 </html>
-
