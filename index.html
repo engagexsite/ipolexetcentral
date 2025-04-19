@@ -1,203 +1,291 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPolexet | No delay, just slay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
 
-/* Container comum para centralizar conteúdo */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    /* Header */
+    header {
+      background-color: #0f0f0f;
+      padding: 40px 0;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
 
-/* Header */
-header {
-  background: linear-gradient(90deg, rgba(0, 180, 0, 0.8), rgba(0, 255, 0, 0.9));
-  color: #fff;
-  padding: 60px 0;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    header h1 {
+      font-size: 3rem;
+      color: #ff0077;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
 
-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  opacity: 0;
-}
+    header h1 span {
+      color: #00FF00;
+    }
 
-header p {
-  font-size: 1.3rem;
-  font-weight: 300;
-  opacity: 0;
-}
+    /* Menu de Navegação */
+    nav {
+      background-color: #1a1a1a;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-/* Navegação */
-nav {
-  background-color: #222;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
+    nav ul li {
+      margin: 0;
+    }
 
-nav ul li {
-  margin: 0;
-}
+    nav ul li a {
+      color: #00FF00;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
+    nav ul li a:hover {
+      background-color: #ff0077;
+      color: #fff;
+    }
 
-nav ul li a:hover {
-  color: #00FF00;
-}
+    /* Seção de Sobre */
+    .about {
+      background: #111;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-/* Seções Gerais */
-.section {
-  padding: 80px 0;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  opacity: 0;
-}
+    .about h2 {
+      font-size: 2.5rem;
+      color: #ff0077;
+      margin-bottom: 20px;
+    }
 
-.section h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  color: #111;
-  margin-bottom: 30px;
-}
+    .about p {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.section p {
-  font-size: 1.1rem;
-  color: #555;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
+    /* Seção de Projetos */
+    .projects {
+      background: #222;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-/* Projetos */
-.projects {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    .projects h2 {
+      font-size: 2.5rem;
+      color: #ff0077;
+      margin-bottom: 40px;
+    }
 
-.project {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  width: 45%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .project {
+      background: #333;
+      padding: 30px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
 
-.project h3 {
-  font-size: 1.5rem;
-  color: #00FF00;
-  margin-bottom: 10px;
-}
+    .project:hover {
+      transform: scale(1.05);
+    }
 
-.project p {
-  color: #777;
-}
+    .project h3 {
+      color: #00FF00;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
 
-.project a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    .project p {
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
 
-.project a:hover {
-  color: #00cc00;
-}
+    /* Seção de Testemunhos */
+    .testimonials {
+      background: #111;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-.project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
+    .testimonials h2 {
+      font-size: 2.5rem;
+      color: #ff0077;
+      margin-bottom: 30px;
+    }
 
-/* Formulário de Contato */
-form {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
+    .testimonial {
+      max-width: 700px;
+      margin: 20px auto;
+      font-style: italic;
+      color: #ccc;
+    }
 
-input, textarea {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #333;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease;
-}
+    /* FAQ */
+    .faq {
+      background: #222;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
 
-input:focus, textarea:focus {
-  border-color: #00FF00;
-  outline: none;
-}
+    .faq h2 {
+      font-size: 2.5rem;
+      color: #ff0077;
+      margin-bottom: 30px;
+    }
 
-button {
-  padding: 15px;
-  background-color: #00FF00;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    .faq p {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-button:hover {
-  background-color: #00cc00;
-}
+    /* Rodapé */
+    footer {
+      background-color: #111;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
 
-/* Rodapé */
-footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
+    footer a {
+      color: #00FF00;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-footer a {
-  color: #00FF00;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+    footer a:hover {
+      color: #ff0077;
+    }
 
-footer a:hover {
-  color: #00cc00;
-}
+    /* Animações */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .project {
+        width: 90%;
+      }
+
+      footer {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>IPolexet <span>No delay, just slay</span></h1>
+  </header>
+
+  <!-- Navegação -->
+  <nav>
+    <ul>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#testimonials">Testemunhos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sobre -->
+  <div id="about" class="about">
+    <h2>Sobre a IPolexet</h2>
+    <p>A IPolexet é uma empresa inovadora que se dedica a criar soluções digitais eficientes para conectar as pessoas e melhorar suas experiências online.</p>
+  </div>
+
+  <!-- Projetos -->
+  <div id="projects" class="projects">
+    <h2>Projetos em Destaque</h2>
+
+    <!-- EngageX -->
+    <div class="project">
+      <h3><a href="https://engagexsite.github.io/engageX/" target="_blank">EngageX</a></h3>
+      <p>O EngageX é uma plataforma dedicada ao impulsionamento do engajamento nas redes sociais, com foco no TikTok.</p>
+    </div>
+
+    <!-- Sublivium -->
+    <div class="project">
+      <h3><a href="https://engagexsite.github.io/sublivium/" target="_blank">Sublivium</a></h3>
+      <p>Sublivium é um jogo de narrativa interativa com escolhas e consequências que traz à tona críticas sociais e questões de moralidade.</p>
+    </div>
+  </div>
+
+  <!-- Testemunhos -->
+  <div id="testimonials" class="testimonials">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="testimonial">
+      <p>"A IPolexet me proporcionou uma experiência incrível, revolucionando a forma como eu interajo com os produtos digitais!"</p>
+    </div>
+    <div class="testimonial">
+      <p>"Os projetos são simplesmente incríveis! Eu sou fã de tudo o que eles fazem. Muito obrigado por transformar a minha forma de ver a tecnologia!"</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div id="faq" class="faq">
+    <h2>Perguntas Frequentes</h2>
+    <p>Quer saber mais sobre nossos serviços? Confira as perguntas mais comuns e descubra como podemos ajudá-lo!</p>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 IPolexet | <a href="#terms">Termos e Condições</a> | <a href="https://www.instagram.com/ipolexet/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a></p>
+  </footer>
+
+</body>
+</html>
