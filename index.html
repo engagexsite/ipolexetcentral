@@ -1,77 +1,203 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPolexet | No delay, just slay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>IPolexet</h1>
-      <p>No delay, just slay</p>
-    </div>
-  </header>
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Navegação -->
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </div>
-  </nav>
+/* Container comum para centralizar conteúdo */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  <!-- Sobre -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>Sobre a IPolexet</h2>
-      <p>A IPolexet é uma empresa dedicada à criação de soluções digitais inovadoras, focando em conectar pessoas e melhorar suas experiências online.</p>
-    </div>
-  </section>
+/* Header */
+header {
+  background: linear-gradient(90deg, rgba(0, 180, 0, 0.8), rgba(0, 255, 0, 0.9));
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  <!-- Projetos -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projetos</h2>
-      <div class="projects">
-        <div class="project">
-          <h3><a href="https://engagexsite.github.io/engageX/" target="_blank">EngageX</a></h3>
-          <p>Plataforma de impulsionamento de engajamento nas redes sociais, focada no TikTok.</p>
-        </div>
-        <div class="project">
-          <h3><a href="https://engagexsite.github.io/sublivium/" target="_blank">Sublivium</a></h3>
-          <p>Jogo interativo com escolhas e consequências, abordando críticas sociais e questões de moralidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  opacity: 0;
+}
 
-  <!-- Contato -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Entre em Contato</h2>
-      <form action="/enviar-email" method="POST">
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar Mensagem</button>
-      </form>
-    </div>
-  </section>
+header p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0;
+}
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 IPolexet | <a href="https://www.linkedin.com">LinkedIn</a> | <a href="https://github.com">GitHub</a></p>
-    </div>
-  </footer>
+/* Navegação */
+nav {
+  background-color: #222;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-</body>
-</html>
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00FF00;
+}
+
+/* Seções Gerais */
+.section {
+  padding: 80px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Projetos */
+.projects {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  color: #00FF00;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: #777;
+}
+
+.project a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project a:hover {
+  color: #00cc00;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulário de Contato */
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #00FF00;
+  outline: none;
+}
+
+button {
+  padding: 15px;
+  background-color: #00FF00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00cc00;
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #00FF00;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00cc00;
+}
